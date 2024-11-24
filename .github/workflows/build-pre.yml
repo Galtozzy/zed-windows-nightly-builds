@@ -73,8 +73,8 @@ jobs:
       - name: Upload release build artifact to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: ${{ env.CURRENT_DATE }}-from-tag
-          tag_name: ${{ env.CURRENT_DATE }}-from-tag
+          name: ${{ env.CURRENT_DATE }}-${{ github.event.inputs.tag }}-from-tag
+          tag_name: ${{ env.CURRENT_DATE }}-${{ github.event.inputs.tag }}-from-tag
           draft: false
           make_latest: true
           files: zed-windows.zip
